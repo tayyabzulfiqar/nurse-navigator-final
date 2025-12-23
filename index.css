@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Flexible Healthcare Brand Colors */
+    --brand-purple: 282 44% 47%;
+    --brand-purple-dark: 282 50% 35%;
+    --brand-teal: 174 72% 40%;
+    --brand-teal-light: 174 65% 50%;
+    
+    /* Semantic Colors */
+    --background: 270 20% 98%;
+    --foreground: 280 25% 17%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 280 25% 17%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 280 25% 17%;
+
+    --primary: 282 44% 47%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 174 72% 40%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 270 20% 96%;
+    --muted-foreground: 280 16% 47%;
+
+    --accent: 174 50% 95%;
+    --accent-foreground: 174 72% 30%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --warning: 25 95% 53%;
+    --warning-foreground: 0 0% 100%;
+
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+
+    --border: 270 20% 91%;
+    --input: 270 20% 91%;
+    --ring: 282 44% 47%;
+
+    --radius: 1rem;
+
+    /* Glassmorphism */
+    --glass-bg: 0 0% 100% / 0.7;
+    --glass-border: 0 0% 100% / 0.3;
+    --glass-blur: 20px;
+
+    /* Premium Shadows */
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.03);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.03);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.05), 0 4px 6px -4px rgb(0 0 0 / 0.03);
+    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.05), 0 8px 10px -6px rgb(0 0 0 / 0.03);
+    --shadow-glow: 0 0 40px hsl(282 44% 47% / 0.15);
+    --shadow-card: 0 1px 3px rgb(0 0 0 / 0.04), 0 6px 16px rgb(0 0 0 / 0.04);
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(282 44% 47%) 0%, hsl(282 50% 35%) 100%);
+    --gradient-hero: linear-gradient(145deg, hsl(282 44% 52%) 0%, hsl(282 50% 30%) 100%);
+    --gradient-secondary: linear-gradient(135deg, hsl(174 72% 40%) 0%, hsl(174 65% 30%) 100%);
+    --gradient-glass: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.7) 100%);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 280 5.3% 26.1%;
+    --sidebar-primary: 282 44% 47%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 270 20% 95.9%;
+    --sidebar-accent-foreground: 280 5.9% 10%;
+    --sidebar-border: 270 13% 91%;
+    --sidebar-ring: 282 44% 47%;
+  }
+
+  .dark {
+    --background: 280 30% 6%;
+    --foreground: 270 20% 98%;
+
+    --card: 280 30% 8%;
+    --card-foreground: 270 20% 98%;
+
+    --popover: 280 30% 8%;
+    --popover-foreground: 270 20% 98%;
+
+    --primary: 282 50% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 174 60% 35%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 280 25% 17%;
+    --muted-foreground: 270 15% 65%;
+
+    --accent: 174 40% 20%;
+    --accent-foreground: 174 60% 70%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 270 20% 98%;
+
+    --border: 280 25% 17%;
+    --input: 280 25% 17%;
+    --ring: 282 50% 60%;
+    
+    --sidebar-background: 280 30% 10%;
+    --sidebar-foreground: 270 20% 95.9%;
+    --sidebar-primary: 282 50% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 280 25% 15.9%;
+    --sidebar-accent-foreground: 270 20% 95.9%;
+    --sidebar-border: 280 25% 15.9%;
+    --sidebar-ring: 282 50% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/70 backdrop-blur-xl border border-white/30;
+  }
+
+  .glass-nav {
+    @apply bg-white/80 backdrop-blur-2xl border border-white/40;
+  }
+
+  .card-premium {
+    @apply bg-card rounded-2xl shadow-card;
+    box-shadow: var(--shadow-card);
+  }
+
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .glow-primary {
+    box-shadow: 0 0 30px hsl(282 44% 47% / 0.3), 0 0 60px hsl(282 44% 47% / 0.1);
+  }
+
+  .glow-ring {
+    filter: drop-shadow(0 0 8px hsl(282 50% 55% / 0.6));
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-primary);
+  }
+}
+
+@layer utilities {
+  .animate-pulse-subtle {
+    animation: pulse-subtle 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  @keyframes pulse-subtle {
+    0%, 100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.9;
+      transform: scale(1.02);
+    }
+  }
+
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+
+  @keyframes glow {
+    from {
+      filter: drop-shadow(0 0 5px hsl(282 50% 55% / 0.4));
+    }
+    to {
+      filter: drop-shadow(0 0 15px hsl(282 50% 55% / 0.6));
+    }
+  }
+}
